@@ -7,14 +7,17 @@
   "author": "Chaim Leib Halbert <chaim.leib.halbert@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node lib/app.js",
-    "watch": "node fuse.js"
+    "watch": "node fuse",
+    "test": "node fuse test",
+    "dist": "node fuse dist"
   },
   "dependencies": {
     "phaser": "^3.10.1"
   },
   "devDependencies": {
+    "babel-runtime": "^6.26.0",
     "fuse-box": "^3.3.0",
+    "fuse-test-runner": "^1.0.16",
     "node-sass": "^4.9.0",
     "typescript": "^2.9.2",
     "uglify-es": "^3.3.9",
