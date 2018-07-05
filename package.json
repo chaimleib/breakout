@@ -1,0 +1,22 @@
+{
+  "name": "breakout-fusebox-phaser",
+  "version": "0.0.0",
+  "description": "Trying out three things at once: a first JS game using fuse-box and phaser",
+  "main": "index.js",
+  "repository": "https://github.com/chaimleib/breakout-fusebox-phaser",
+  "author": "Chaim Leib Halbert <chaim.leib.halbert@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node lib/app.js",
+    "build": "node fuse.js"
+  },
+  "dependencies": {
+    "phaser": "^3.10.1"
+  },
+  "devDependencies": {
+    "fuse-box": "^3.3.0",
+    "typescript": "^2.9.2",
+    "uglify-es": "^3.3.9",
+    "uglify-js": "^3.4.3"
+  }
+}
