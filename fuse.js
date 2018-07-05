@@ -8,8 +8,13 @@ const fuse = FuseBox.init({
     WebIndexPlugin({ path: '.' }),
   ],
 })
+
+fuse.dev()
+
 fuse.bundle('app')
-  .watch()
   .instructions(' > index.ts')
+  .watch()
+  .hmr()
+
 fuse.run()
 
