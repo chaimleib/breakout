@@ -1,10 +1,7 @@
 import './sass/main.scss'
 
 async function main() {
-  document.head.innerHTML = `
-  <meta charset="utf-8" />
-  <title>Breakout</title>
-  `
+  document.title = 'Breakout'
 
   document.body.innerHTML = `
   <div class="content">

@@ -7,6 +7,9 @@ module.exports = {
   mode,
   entry: './src/index.ts',
   devtool: 'inline-source-map',
+  devServer: {
+    static: './dist',
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: '',
