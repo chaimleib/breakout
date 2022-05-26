@@ -1,12 +1,19 @@
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'production',
   entry: './src/index.ts',
   devtool: 'inline-source-map',
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: '',
+    }),
+  ],
   output: {
     filename: 'main.js',
     path: __dirname + '/dist',
+    clean: true,
   },
   module: {
     rules: [
