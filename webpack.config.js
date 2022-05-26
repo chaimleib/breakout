@@ -1,3 +1,5 @@
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+
 module.exports = {
   mode: 'production',
   entry: './src/index.ts',
@@ -21,5 +23,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+  },
+  optimization: {
+    minimizer: [
+      `...`, // webpack@5: extend existing minimizers
+      new CssMinimizerPlugin(),
+    ],
   },
 };
