@@ -1,8 +1,10 @@
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const mode = process.env.PRODUCTION ? 'production' : 'development'
+
 module.exports = {
-  mode: 'production',
+  mode,
   entry: './src/index.ts',
   devtool: 'inline-source-map',
   plugins: [
