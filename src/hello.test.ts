@@ -1,10 +1,9 @@
-import { should } from 'fuse-test-runner'
+import * as assert from 'assert'
 import { hello } from './hello'
 
-export class HelloTest {
-  "Should say hello"() {
-    should(hello('Mike'))
-      .equal('Hello Mike')
-  }
-}
+describe('hello', function() {
+  it('Should say hello', function() {
+    assert.equal(hello('Mike'), 'Hello Mike')
+  })
+})
 

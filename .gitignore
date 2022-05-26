@@ -1,6 +1,5 @@
-lib/
+dist/
 .DS_Store
 *.swp
-.fusebox/
 node_modules/
 
