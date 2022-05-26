@@ -1,45 +1,47 @@
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const mode = process.env.PRODUCTION ? 'production' : 'development'
+module.exports = env => {
+  const { production } = env
 
-module.exports = {
-  mode,
-  entry: './src/index.ts',
-  devtool: 'inline-source-map',
-  devServer: {
-    static: './dist',
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: '',
-    }),
-  ],
-  output: {
-    filename: 'main.js',
-    path: __dirname + '/dist',
-    clean: true,
-  },
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
+  return {
+    mode: production ? 'production' : 'development',
+    entry: './src/index.ts',
+    devtool: 'inline-source-map',
+    devServer: {
+      static: './dist',
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        title: '',
+      }),
     ],
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
-  optimization: {
-    minimizer: [
-      `...`, // webpack@5: extend existing minimizers
-      new CssMinimizerPlugin(),
-    ],
-  },
-};
+    output: {
+      filename: 'main.js',
+      path: __dirname + '/dist',
+      clean: true,
+    },
+    module: {
+      rules: [
+        {
+          test: /\.scss$/,
+          use: ['style-loader', 'css-loader', 'sass-loader'],
+        },
+        {
+          test: /\.tsx?$/,
+          use: 'ts-loader',
+          exclude: /node_modules/,
+        },
+      ],
+    },
+    resolve: {
+      extensions: ['.tsx', '.ts', '.js'],
+    },
+    optimization: {
+      minimizer: [
+        `...`, // webpack@5: extend existing minimizers
+        new CssMinimizerPlugin(),
+      ],
+    },
+  }
+}

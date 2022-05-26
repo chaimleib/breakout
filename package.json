@@ -6,7 +6,7 @@
   "author": "Chaim Leib Halbert <chaim.leib.halbert@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "PRODUCTION=y webpack --config webpack.config.js",
+    "build": "webpack --env production --config webpack.config.js",
     "start": "webpack serve --open --config webpack.config.js",
     "test": "mocha"
   },
