@@ -1,0 +1,49 @@
+$spinner-diameter: 50px;
+$hub-diameter: 50px;
+$light-on-color: #44ff44;
+$light-off-color: #004400;
+
+.loading-spinner {
+  display: block;
+  width: $spinner-diameter;
+  height: $spinner-diameter;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  border: 10px solid grey;
+  border-color: grey transparent transparent transparent;
+  animation: spin 1.5s linear infinite;
+
+  &:after {
+    content: "";
+    margin-top: calc(($spinner-diameter - $hub-diameter) / 2);
+    margin-left: calc(($spinner-diameter - $hub-diameter) / 2);
+    display: inline-block;
+    width: $hub-diameter;
+    height: $hub-diameter;
+    border-radius: 50%;
+    background-color: #008800;
+    animation: light-pulse 1.5s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes light-pulse {
+  0% {
+    background-color: $light-off-color;
+  }
+  15% {
+    background-color: $light-on-color;
+  }
+  100% {
+    babckground-color: $light-off-color;
+  }
+}
