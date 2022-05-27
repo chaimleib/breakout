@@ -1,8 +1,8 @@
 {
-  "name": "breakout-fusebox-phaser",
+  "name": "breakout",
   "version": "0.0.0",
-  "description": "Trying out three things at once: a first JS game using fuse-box and phaser",
-  "repository": "https://github.com/chaimleib/breakout-phaser",
+  "description": "A first JS game using phaser",
+  "repository": "https://github.com/chaimleib/breakout",
   "author": "Chaim Leib Halbert <chaim.leib.halbert@gmail.com>",
   "license": "MIT",
   "scripts": {
