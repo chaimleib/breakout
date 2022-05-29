@@ -10,6 +10,7 @@ async function main() {
     <p>${(await import('./hello')).hello('CL')}</p>
     <div id="game">
       <div class="loading-spinner"></div>
+      ${await import('./breakout')}
     </div>
   </div>`
 }
