@@ -9,7 +9,7 @@ module.exports = env => {
     entry: './src/index.ts',
     devtool: 'inline-source-map',
     devServer: {
-      static: './dist',
+      static: ['./dist', './public'],
     },
     plugins: [
       new HtmlWebpackPlugin({

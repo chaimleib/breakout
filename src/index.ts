@@ -1,8 +1,8 @@
-import './sass/main.scss'
-import './sass/loading-spinner.scss'
+import './sass/main.scss';
+import './sass/loading-spinner.scss';
 
 async function main() {
-  document.title = 'Breakout'
+  document.title = 'Breakout';
 
   document.body.innerHTML = `
   <div class="content">
@@ -10,10 +10,11 @@ async function main() {
     <p>${(await import('./hello')).hello('CL')}</p>
     <div id="game">
       <div class="loading-spinner"></div>
-      ${await import('./breakout')}
     </div>
-  </div>`
+  </div>`;
+
+  (await import('./breakout')).init('game');
 }
 
-main()
+main();
 
